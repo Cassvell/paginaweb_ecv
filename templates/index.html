@@ -1,13 +1,14 @@
+<!-- templates/index.html -->
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+       <!--  <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>
             Document
         </title> 
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     </head>
 
     <body>
@@ -64,11 +65,20 @@
                     <div class="circle-txt">
                         <div class="circule-1">
 
-                        <form>
-                            <input class="campo" type="text" placeholder="Nombre()">
-                            <input class="campo" type="text" placeholder="Apellido(s)">
-                            <input class="campo" type="text" placeholder="CURP">
-                            <input class="campo" type="text" placeholder="RFC">
+                            <form action="/submit-form" method="post">
+                                <label for="nombre">Nombre:</label>
+                                <input type="text" id="nombre" name="Nombre" placeholder="Nombre" required>
+        
+                                <label for="apellidos">Apellido(s):</label>
+                                <input type="text" id="apellidos" name="Apellidos" placeholder="Apellido(s)" required>
+        
+                                <label for="curp">CURP:</label>
+                                <input type="text" id="curp" name="CURP" placeholder="CURP" required>
+        
+                                <label for="rfc">RFC:</label>
+                                <input type="text" id="rfc" name="RFC" placeholder="RFC" required>
+        
+                                <button type="submit">Submit</button>
                         </form>
                         </div>
 
