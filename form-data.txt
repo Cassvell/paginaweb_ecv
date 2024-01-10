@@ -1,4 +1,0 @@
-Nombre: carlos
-Apellidos: castellanos
-CURP: velazco
-RFC: csdcws

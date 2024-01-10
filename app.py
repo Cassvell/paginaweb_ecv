@@ -12,21 +12,28 @@ def index():
 
 @app.route('/submit-form', methods=['POST'])
 def submit_form():
-    form_data = request.form
+    try:
+        form_data = request.form
 
-    # Process the form data (you may want to validate or sanitize it here)
+        # Process the form data (you may want to validate or sanitize it here)
 
-    # Create an ASCII string from the form data
-    ascii_data = '\n'.join([f'{key}: {value}' for key, value in form_data.items()])
+        # Create an ASCII string from the form data
+        ascii_data = '\n'.join([f'{key}: {value}' for key, value in form_data.items()])
 
-    # Save the ASCII data to a file
-    with open('form-data.txt', 'w') as file:
-        file.write(ascii_data)
+        # Save the ASCII data to a file
+        with open('form-data.txt', 'w') as file:
+            file.write(ascii_data)
 
-    # Send an email with the attached file
-    send_email(ascii_data)
+        # Send an email with the attached file
+        send_email(ascii_data)
 
-    return 'Form submitted successfully!'
+        # Stop the Flask development server
+        sys.exit(0)
+
+    except Exception as e:
+        print(f"Error processing form: {e}")
+        traceback.print_exc()  # Add this line to print the traceback
+        return "Error processing form", 500
 
 def send_email(ascii_data):
     # Configure email details for Hotmail (Outlook)

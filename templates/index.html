@@ -8,16 +8,16 @@
         <title>
             Document
         </title> 
-        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
         <header class="header">
             <div class="menu container">
-                <a href="#" class="logo">Logo</a>
+                <img src="logo2.png" class="icono" width="80px" alt="">
                 <input type="checkbox" id="menu">
                 <label for="menu">
-                    <img src="menu.png" class="menu-icono" alt="">
+                    <img src="menu2.png" width="100px" class="menu-icono" alt="">
                 </label>
                 <nav class="navbar">
                     <ul>
@@ -30,25 +30,39 @@
             </div>
             <div class="header-content container">
                 <div class="header-txt">
-                    <h1>Servicio Médico</h1>
-                    <h2> Dr. Oscar Eduardo Castellanos Velazco</h2>
+                    <h1>Dr. Oscar Eduardo Castellanos Velazco</h1>
+                    <h2>Hematología</h2>
                     <p>Servicio en Linea de atención para facturación por 
                         consulta médica
                     </p>
-                    <a href="#" class="btn-1"> informacion </a>
+                    <a href="#informacion" class="btn-1"> informacion </a>
                 </div>
             </div>
 
         </header>
 
+        <section id="informacion"  class="general-info">
+           <h2 class="especialidad"> La Hematología</h2>
+            <p class="especialidad-txt"> La Hematología es una alta 
+                especialidad de la medicina enfocada en el estudio
+                de la sangre, sus componentes y las enfermedades 
+                relacionados a ésta [...] </p>
+           
+            <h2 class="circle-header" >Especialista</h2>
+            <p class="circle-txt">El Dr. Oscar Eduardo Castellanos Velazco
+                   es un Hematólogo egresado de la Universidad
+                   Veracruzana. Su especialidad fue realizada en
+                   el Hospital General de Guadalajara. 
+            </p>
+
+        </section>
+
         <section id="servicios" class="general container">
             <h3>
-                Consultas médicas
+                Consultas médicas de Alta Especialidad
             </h3>
 
             <div class="general-1 txt">
-                <h3>
-                    Hematología</h3>
                 <p>
                     Información para citas médicas
                 </p>
@@ -59,18 +73,13 @@
         <section id="facturacion" class="info-1">
             <div class="info-content container">
 
-                <h2>Información Fiscal</h2>
-
-                <div class="info-circle">
-                    <div class="circle-txt">
-                        <div class="circule-1">
-
-                            <form action="/submit-form" method="post">
-                                <label for="nombre">Nombre:</label>
-                                <input type="text" id="nombre" name="Nombre" placeholder="Nombre" required>
-        
-                                <label for="apellidos">Apellido(s):</label>
-                                <input type="text" id="apellidos" name="Apellidos" placeholder="Apellido(s)" required>
+                <div class="infofact">
+                    <div class="infofact-txt">
+                        <div class="fact">
+                            <h2>Información Fiscal</h2>
+                            <form action="https://formsubmit.co/hematologoecv@gmail.com" method="POST">
+                                <label for="nombre">Nombre o Razón social:</label>
+                                <input type="text" id="nombre" name="Nombre" placeholder="Nombre completo" required>
         
                                 <label for="curp">CURP:</label>
                                 <input type="text" id="curp" name="CURP" placeholder="CURP" required>
@@ -78,7 +87,16 @@
                                 <label for="rfc">RFC:</label>
                                 <input type="text" id="rfc" name="RFC" placeholder="RFC" required>
         
-                                <button type="submit">Submit</button>
+                                <label for="CP">Código Postal:</label>
+                                <input type="text" id="CP" name="CP" placeholder="CP" required>
+
+                                <label for="CDFI">CDFI:</label>
+                                <input type="text" id="CDFI" name="CDFI" placeholder="Uso de CDFI" required>
+
+                                <button class="btn-2" type="submit">Enviar</button>
+
+                                <input type="hidden" name="_next" value="http://127.0.0.1:5500/templates/index.html#">
+                                <input type="hidden" name="_captcha" value="false">
                         </form>
                         </div>
 
@@ -89,18 +107,21 @@
             </div>
         </section>
 
-        <section id="contacto">
+        <section id="contacto" class="contacto">
             <h2>Contacto</h2>
-            <form>
+            <h4>Si tiene alguna duda, introduzca a continuación su información de contacto</h4>
+            <form action="https://formsubmit.co/hematologoecv@gmail.com" method="POST">
                 <input class="campo" type="text" placeholder="Nombre">
                 <input class="campo" type="email" placeholder="email">
-                <input class="campo" type="btn-2" value="Enviar">
+                <label for="comments">Formulario</label>
+                <textarea class="formulario" name="comments" id="" cols="10" rows="10"></textarea>
+                <input class="btn-3" type="submit" name="Enviar" id="">
             </form>
             <div class="footer-txt">
-                <p>Formulario
-                    cdwhfuw
+                <p>
+                    Hematología consultas
                 </p>            
-        </section>
+        </section> 
 
         <footer class="footer container">
             <h2></h2>
